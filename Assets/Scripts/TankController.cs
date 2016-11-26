@@ -5,6 +5,7 @@ public class TankController : MonoBehaviour {
 	public float speed;
 	public float maneuverability;
 	public CannonController cannon;
+	public MachineGunController machineGun;
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +32,7 @@ public class TankController : MonoBehaviour {
 
 		if (Input.GetKey (KeyCode.X)) {
 			cannon.Shoot ();
+			machineGun.Shoot ();
 		}
 	}
 }

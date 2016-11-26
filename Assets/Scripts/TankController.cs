@@ -11,6 +11,7 @@ public class TankController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		currentWeapon = weapons [0];
+		currentWeapon.Activate();
 	}
 
 	// Update is called once per frame
@@ -31,12 +32,14 @@ public class TankController : MonoBehaviour {
 			gameObject.transform.Rotate(new Vector3 (0, maneuverability, 0));
 		}
 
-		if (Input.GetKey (KeyCode.Q)) {
-			currentWeapon = weapons[0];
-		}
-
-		if (Input.GetKey (KeyCode.W)) {
-			currentWeapon = weapons[1];
+		if (Input.GetKey (KeyCode.Q) || Input.GetKey (KeyCode.W)) {
+			currentWeapon.Deactivate();
+			if (Input.GetKey (KeyCode.Q)) {
+				currentWeapon = weapons [0];
+			} else if (Input.GetKey (KeyCode.W)) {
+				currentWeapon = weapons [1];
+			}
+			currentWeapon.Activate();
 		}
 
 		if (Input.GetKey (KeyCode.X)) {

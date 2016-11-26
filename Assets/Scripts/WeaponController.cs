@@ -22,9 +22,12 @@ public class WeaponController : MonoBehaviour {
 		}
 	}
 
-	// Use this for initialization
-	void Start () {
+	public void Activate () {
+		GetComponent<Renderer>().material.color = Color.red;
+	}
 
+	public void Deactivate () {
+		GetComponent<Renderer>().material.color = Color.yellow;
 	}
 
 	// Update is called once per frame

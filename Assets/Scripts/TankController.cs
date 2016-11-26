@@ -4,12 +4,13 @@ using System.Collections;
 public class TankController : MonoBehaviour {
 	public float speed;
 	public float maneuverability;
-	public CannonController cannon;
-	public MachineGunController machineGun;
+	public WeaponController[] weapons;
+
+	private WeaponController currentWeapon;
 
 	// Use this for initialization
 	void Start () {
-	
+		currentWeapon = weapons [0];
 	}
 
 	// Update is called once per frame
@@ -30,9 +31,16 @@ public class TankController : MonoBehaviour {
 			gameObject.transform.Rotate(new Vector3 (0, maneuverability, 0));
 		}
 
+		if (Input.GetKey (KeyCode.Q)) {
+			currentWeapon = weapons[0];
+		}
+
+		if (Input.GetKey (KeyCode.W)) {
+			currentWeapon = weapons[1];
+		}
+
 		if (Input.GetKey (KeyCode.X)) {
-			cannon.Shoot ();
-			machineGun.Shoot ();
+			currentWeapon.Shoot ();
 		}
 	}
 }

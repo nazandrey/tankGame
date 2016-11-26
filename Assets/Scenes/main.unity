@@ -772,6 +772,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 344657616}
     m_Modifications:
+    - target: {fileID: 11498904, guid: 191095747009c79448b77cf6cb4e7cdc, type: 2}
+      propertyPath: weapons.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 487166, guid: 191095747009c79448b77cf6cb4e7cdc, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -814,6 +818,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11498904, guid: 191095747009c79448b77cf6cb4e7cdc, type: 2}
       propertyPath: machineGun
+      value: 
+      objectReference: {fileID: 492537722}
+    - target: {fileID: 11498904, guid: 191095747009c79448b77cf6cb4e7cdc, type: 2}
+      propertyPath: weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1187684013}
+    - target: {fileID: 11498904, guid: 191095747009c79448b77cf6cb4e7cdc, type: 2}
+      propertyPath: weapons.Array.data[1]
       value: 
       objectReference: {fileID: 492537722}
     m_RemovedComponents:
@@ -862,6 +874,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   spawnDelay: 0.3
+--- !u!114 &1187684013 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11487270, guid: 191095747009c79448b77cf6cb4e7cdc,
+    type: 2}
+  m_PrefabInternal: {fileID: 1145802390}
+  m_Script: {fileID: 11500000, guid: 06d8e6b7f4174db40ab973fc912f13e7, type: 3}
 --- !u!1 &1270399993
 GameObject:
   m_ObjectHideFlags: 0

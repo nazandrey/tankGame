@@ -3,11 +3,11 @@ using System.Collections;
 
 public class MonsterController : MonoBehaviour {
 	public float moveSpeed = 4;
+	public float attackDamage = 4;
 	public float health = 10;
 	[Range(0f,1f)]public float armor = 0.5f;
 
 	private Transform player;
-	private float attackDamage = 4;
 	private EnemyManager enemyManager;
 
 

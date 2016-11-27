@@ -13,8 +13,8 @@ GameObject:
   - 23: {fileID: 2301646}
   - 54: {fileID: 5454614}
   - 75: {fileID: 7544790}
-  - 114: {fileID: 11449138}
   - 135: {fileID: 13519930}
+  - 114: {fileID: 11494688}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -106,7 +106,7 @@ ConstantForce:
   m_RelativeForce: {x: 0, y: 0, z: 100}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
---- !u!114 &11449138
+--- !u!114 &11494688
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -114,9 +114,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 114332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2e9947ecf710e74ca3029f0180d20cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d809a7cc85ec34488168cfc65e67839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultBulletDestroyingTime: 3
+  damageOnHit: 3
 --- !u!135 &13519930
 SphereCollider:
   m_ObjectHideFlags: 1

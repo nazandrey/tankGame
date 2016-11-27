@@ -51,6 +51,5 @@ public class TankController : MonoBehaviour {
 
 	public void TakeDamage(float damage){
 		health -= damage * (1f - armor);
-
 	}
 }

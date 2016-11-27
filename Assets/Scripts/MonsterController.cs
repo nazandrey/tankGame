@@ -5,6 +5,8 @@ public class MonsterController : MonoBehaviour {
 	public float moveSpeed = 4;
 	private Transform player;
 	private float attackDamage = 4;
+	public float health = 10;
+	[Range(0f,1f)]public float armor = 0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -19,11 +21,19 @@ public class MonsterController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.tag == "Bullet") {
-			Destroy (gameObject);
+		if (other.tag == "Shot") {
+			ShotController shot = other.gameObject.GetComponent<ShotController> ();
+			TakeDamage (shot.damageOnHit);
+			if (health < 0) {
+				Destroy (gameObject);
+			}
 		} else if (other.tag == "Player") {
 			player.GetComponent<TankController>().TakeDamage (attackDamage);
 			Destroy (gameObject);
 		}
+	}
+
+	void TakeDamage(float damage){
+		health -= damage * (1f - armor);
 	}
 }

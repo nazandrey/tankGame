@@ -681,6 +681,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1504231706}
   m_RootOrder: 1
+--- !u!1 &1080928857 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 115696, guid: 191095747009c79448b77cf6cb4e7cdc, type: 2}
+  m_PrefabInternal: {fileID: 1145802390}
+--- !u!136 &1080928860
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1080928857}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.72007513
+  m_Height: 0.008255393
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1100294874
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +845,10 @@ Prefab:
       propertyPath: weapons.Array.data[1]
       value: 
       objectReference: {fileID: 492537722}
+    - target: {fileID: 11498904, guid: 191095747009c79448b77cf6cb4e7cdc, type: 2}
+      propertyPath: armor
+      value: 0.37
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11416102, guid: 191095747009c79448b77cf6cb4e7cdc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 191095747009c79448b77cf6cb4e7cdc, type: 2}

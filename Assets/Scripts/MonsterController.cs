@@ -2,8 +2,9 @@
 using System.Collections;
 
 public class MonsterController : MonoBehaviour {
-	public float moveSpeed = 4.0f;
+	public float moveSpeed = 4;
 	private Transform player;
+	private float attackDamage = 4;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,9 @@ public class MonsterController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Bullet") {
+			Destroy (gameObject);
+		} else if (other.tag == "Player") {
+			player.GetComponent<TankController>().TakeDamage (attackDamage);
 			Destroy (gameObject);
 		}
 	}

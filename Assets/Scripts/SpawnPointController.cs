@@ -17,7 +17,6 @@ public class SpawnPointController : MonoBehaviour {
 
 	public void Spawn(GameObject spawnObject){
 		Transform monsterPosition = gameObject.transform;
-		monsterPosition.Translate (0, 1, 0);
 		Instantiate (spawnObject, monsterPosition.position, monsterPosition.rotation);
 		isActive = false;
 		Invoke ("reset", spawnDelay);

@@ -3,14 +3,18 @@ using System.Collections;
 
 public class MonsterController : MonoBehaviour {
 	public float moveSpeed = 4;
-	private Transform player;
-	private float attackDamage = 4;
 	public float health = 10;
 	[Range(0f,1f)]public float armor = 0.5f;
+
+	private Transform player;
+	private float attackDamage = 4;
+	private EnemyManager enemyManager;
+
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
+		enemyManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<EnemyManager> ();
 	}
 
 	// Update is called once per frame
@@ -26,10 +30,12 @@ public class MonsterController : MonoBehaviour {
 			TakeDamage (shot.damageOnHit);
 			if (health < 0) {
 				Destroy (gameObject);
+				enemyManager.Spawn ();
 			}
 		} else if (other.tag == "Player") {
 			player.GetComponent<TankController>().TakeDamage (attackDamage);
 			Destroy (gameObject);
+			enemyManager.Spawn ();
 		}
 	}
 

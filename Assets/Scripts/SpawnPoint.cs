@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpawnPointController : MonoBehaviour {
+public class SpawnPoint : MonoBehaviour {
 	public bool isActive = true;
 	public float spawnDelay = 0.3f;
 

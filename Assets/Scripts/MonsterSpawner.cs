@@ -2,11 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class EnemyManager : MonoBehaviour {
-	public List<SpawnPointController> spawnPointList;
+public class MonsterSpawner : MonoBehaviour {
+	public List<SpawnPoint> spawnPointList;
 	public GameObject[] monsterTypeArr;
 	private const int MonsterCount = 10;
-	private List<SpawnPointController> activeSpawnPointList;
+	private List<SpawnPoint> activeSpawnPointList;
 
 	// Use this for initialization
 	void Start () {
@@ -18,9 +18,9 @@ public class EnemyManager : MonoBehaviour {
 	}
 
 	public void checkActiveSpawnPointList(){
-		activeSpawnPointList = new List<SpawnPointController>();
+		activeSpawnPointList = new List<SpawnPoint>();
 		for (int i = 0; i < spawnPointList.Count; i++) {
-			SpawnPointController spawnPoint = spawnPointList [i];
+			SpawnPoint spawnPoint = spawnPointList [i];
 			if (spawnPoint.isActive) {
 				activeSpawnPointList.Add(spawnPoint);
 			}

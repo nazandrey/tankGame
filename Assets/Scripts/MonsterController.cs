@@ -8,13 +8,13 @@ public class MonsterController : MonoBehaviour {
 	[Range(0f,1f)]public float armor = 0.5f;
 
 	private Transform player;
-	private EnemyManager enemyManager;
+	private MonsterSpawner monsterSpawner;
 
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
-		enemyManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<EnemyManager> ();
+		monsterSpawner = GameObject.FindGameObjectWithTag ("GameController").GetComponent<MonsterSpawner> ();
 	}
 
 	// Update is called once per frame
@@ -26,16 +26,16 @@ public class MonsterController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Shot") {
-			ShotController shot = other.gameObject.GetComponent<ShotController> ();
+			Shot shot = other.gameObject.GetComponent<Shot> ();
 			TakeDamage (shot.damageOnHit);
 			if (health < 0) {
 				Destroy (gameObject);
-				enemyManager.Spawn ();
+				monsterSpawner.Spawn ();
 			}
 		} else if (other.tag == "Player") {
 			player.GetComponent<TankController>().TakeDamage (attackDamage);
 			Destroy (gameObject);
-			enemyManager.Spawn ();
+			monsterSpawner.Spawn ();
 		}
 	}
 

@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ShotController : MonoBehaviour {
+public class Shot : MonoBehaviour {
 	public float defaultBulletDestroyingTime;
 	public float damageOnHit;
 
-	public ShotController(float time, float damage){
+	public Shot(float time, float damage){
 		defaultBulletDestroyingTime = time;
 		damageOnHit = damage;
 	}

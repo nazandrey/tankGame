@@ -14,10 +14,6 @@ public class Shot : MonoBehaviour {
 		Destroy (gameObject, defaultBulletDestroyingTime);
 	}
 
-	void OnCollisionEnter() {
-		Destroy (gameObject);
-	}
-
 	void OnTriggerEnter() {
 		Destroy (gameObject);
 	}

@@ -14,6 +14,16 @@ public class WeaponController : MonoBehaviour {
 		ShotStartDistance = shotStartDistance;
 	}
 
+	// Update is called once per frame
+	void Update () {
+		if (currentDelayBetweenShots > 0) {
+			canShoot = false;
+			currentDelayBetweenShots -= Time.deltaTime;
+		} else {
+			canShoot = true;
+		}
+	}
+
 	public void Shoot(){
 		if (canShoot) {
 			Vector3 shotPosition = gameObject.transform.position + gameObject.transform.forward * ShotStartDistance;
@@ -28,15 +38,5 @@ public class WeaponController : MonoBehaviour {
 
 	public void Deactivate () {
 		GetComponent<Renderer>().material.color = Color.yellow;
-	}
-
-	// Update is called once per frame
-	void Update () {
-		if (currentDelayBetweenShots > 0) {
-			canShoot = false;
-			currentDelayBetweenShots -= Time.deltaTime;
-		} else {
-			canShoot = true;
-		}
 	}
 }

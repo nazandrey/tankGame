@@ -4,8 +4,6 @@ using System.Collections;
 public class TankController : MonoBehaviour {
 	public float speed;
 	public float maneuverability;
-	public float health = 10;
-	[Range(0f,1f)]public float armor = 0.5f;
 	public WeaponController[] weapons;
 
 	private WeaponController currentWeapon;
@@ -47,9 +45,5 @@ public class TankController : MonoBehaviour {
 		if (Input.GetKey (KeyCode.X)) {
 			currentWeapon.Shoot ();
 		}
-	}
-
-	public void TakeDamage(float damage){
-		health -= damage * (1f - armor);
 	}
 }

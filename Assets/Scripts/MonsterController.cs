@@ -4,17 +4,17 @@ using System.Collections;
 public class MonsterController : MonoBehaviour {
 	public float moveSpeed = 4;
 	public float attackDamage = 4;
-	public float health = 10;
-	[Range(0f,1f)]public float armor = 0.5f;
 
 	private Transform player;
 	private MonsterSpawner monsterSpawner;
+	private Health health;
 
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
 		monsterSpawner = GameObject.FindGameObjectWithTag ("GameController").GetComponent<MonsterSpawner> ();
+		health = gameObject.GetComponent<Health> ();
 	}
 
 	// Update is called once per frame
@@ -27,19 +27,19 @@ public class MonsterController : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Shot") {
 			Shot shot = other.gameObject.GetComponent<Shot> ();
-			TakeDamage (shot.damageOnHit);
-			if (health < 0) {
-				Destroy (gameObject);
-				monsterSpawner.Spawn ();
+			if (health != null) {
+				health.Hurt (shot.damageOnHit);
+				if (health.IsDead) {
+					monsterSpawner.Spawn ();
+				}
 			}
 		} else if (other.tag == "Player") {
-			player.GetComponent<TankController>().TakeDamage (attackDamage);
+			Health playerHealth = player.GetComponent<Health> ();
+			if (playerHealth != null) {
+				playerHealth.Hurt (attackDamage);
+			}
 			Destroy (gameObject);
 			monsterSpawner.Spawn ();
 		}
-	}
-
-	void TakeDamage(float damage){
-		health -= damage * (1f - armor);
 	}
 }

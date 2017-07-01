@@ -708,6 +708,17 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 115696, guid: 191095747009c79448b77cf6cb4e7cdc, type: 2}
   m_PrefabInternal: {fileID: 1145802390}
+--- !u!114 &1080928858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1080928857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c0dcc3ec8d33945a4481c9051a1c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &1080928860
 CapsuleCollider:
   m_ObjectHideFlags: 0

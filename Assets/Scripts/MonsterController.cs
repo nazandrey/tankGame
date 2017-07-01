@@ -9,15 +9,12 @@ public class MonsterController : MonoBehaviour {
 	private MonsterSpawner _monsterSpawner;
 	private Health _health;
 
-
-	// Use this for initialization
 	void Start () {
 		_player = GameObject.FindGameObjectWithTag ("Player").transform;
 		_monsterSpawner = GameObject.FindGameObjectWithTag ("GameController").GetComponent<MonsterSpawner> ();
 		_health = gameObject.GetComponent<Health> ();
 	}
 
-	// Update is called once per frame
 	void Update () {
 		Vector3 targetPosition = new Vector3(_player.position.x, transform.position.y, _player.position.z) ;
 		transform.LookAt (targetPosition);

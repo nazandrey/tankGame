@@ -5,12 +5,10 @@ public class SpawnPoint : MonoBehaviour {
 	public bool isActive = true;
 	public float spawnDelay = 0.3f;
 
-	// Use this for initialization
 	void Start () {
 	
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 	
 	}

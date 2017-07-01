@@ -9,7 +9,6 @@ public class MonsterSpawner : MonoBehaviour {
 	private const int _MonsterCount = 10;
 	private List<SpawnPoint> _activeSpawnPointList;
 
-	// Use this for initialization
 	void Start () {
 		CheckActiveSpawnPointList ();
 		for (int i = 0; i < _MonsterCount; i++) {

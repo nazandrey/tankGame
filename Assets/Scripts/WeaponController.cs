@@ -14,7 +14,6 @@ public class WeaponController : MonoBehaviour {
 		_shotStartDistance = shotStartDistance;
 	}
 
-	// Update is called once per frame
 	void Update () {
 		if (_currentDelayBetweenShots > 0) {
 			_canShoot = false;

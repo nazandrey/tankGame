@@ -10,7 +10,6 @@ public class Shot : MonoBehaviour {
 		damageOnHit = damage;
 	}
 
-	// Use this for initialization
 	void Start () {
 		Destroy (gameObject, defaultBulletDestroyingTime);
 	}

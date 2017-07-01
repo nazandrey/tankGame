@@ -8,13 +8,11 @@ public class TankController : MonoBehaviour {
 
 	private WeaponController _currentWeapon;
 
-	// Use this for initialization
 	void Start () {
 		_currentWeapon = weapons [0];
 		_currentWeapon.Activate();
 	}
 
-	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey (KeyCode.UpArrow)) {
 			gameObject.transform.Translate (new Vector3 (0, 0, speed));

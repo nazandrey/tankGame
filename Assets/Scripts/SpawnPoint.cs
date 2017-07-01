@@ -22,7 +22,7 @@ public class SpawnPoint : MonoBehaviour {
 		Invoke ("reset", spawnDelay);
 	}
 
-	private void reset(){
+	private void _Activate(){
 		isActive = true;
 	}
 }

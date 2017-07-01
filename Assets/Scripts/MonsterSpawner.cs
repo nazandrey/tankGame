@@ -5,19 +5,20 @@ using System.Collections.Generic;
 public class MonsterSpawner : MonoBehaviour {
 	public List<SpawnPoint> spawnPointList;
 	public GameObject[] monsterTypeArr;
+
 	private const int MonsterCount = 10;
 	private List<SpawnPoint> activeSpawnPointList;
 
 	// Use this for initialization
 	void Start () {
-		checkActiveSpawnPointList ();
+		CheckActiveSpawnPointList ();
 		for (int i = 0; i < MonsterCount; i++) {
 			Spawn ();
 		}
 		InvokeRepeating ("checkActiveSpawnPointList",0.5f,0.5f);
 	}
 
-	public void checkActiveSpawnPointList(){
+	public void CheckActiveSpawnPointList(){
 		activeSpawnPointList = new List<SpawnPoint>();
 		for (int i = 0; i < spawnPointList.Count; i++) {
 			SpawnPoint spawnPoint = spawnPointList [i];

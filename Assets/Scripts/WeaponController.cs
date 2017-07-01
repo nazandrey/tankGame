@@ -4,31 +4,31 @@ using System.Collections;
 public class WeaponController : MonoBehaviour {
 	public GameObject shotTemplate;
 
-	private float DelayBetweenShots;
-	private float ShotStartDistance;
-	private float currentDelayBetweenShots = 0.0f;
-	private bool canShoot = true;
+	private float _delayBetweenShots;
+	private float _shotStartDistance;
+	private float _currentDelayBetweenShots = 0.0f;
+	private bool _canShoot = true;
 
 	public WeaponController(float delayBetweenShots, float shotStartDistance){
-		DelayBetweenShots = delayBetweenShots;
-		ShotStartDistance = shotStartDistance;
+		_delayBetweenShots = delayBetweenShots;
+		_shotStartDistance = shotStartDistance;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (currentDelayBetweenShots > 0) {
-			canShoot = false;
-			currentDelayBetweenShots -= Time.deltaTime;
+		if (_currentDelayBetweenShots > 0) {
+			_canShoot = false;
+			_currentDelayBetweenShots -= Time.deltaTime;
 		} else {
-			canShoot = true;
+			_canShoot = true;
 		}
 	}
 
 	public void Shoot(){
-		if (canShoot) {
-			Vector3 shotPosition = gameObject.transform.position + gameObject.transform.forward * ShotStartDistance;
+		if (_canShoot) {
+			Vector3 shotPosition = gameObject.transform.position + gameObject.transform.forward * _shotStartDistance;
 			Instantiate (shotTemplate, shotPosition, gameObject.transform.rotation);
-			currentDelayBetweenShots = DelayBetweenShots;
+			_currentDelayBetweenShots = _delayBetweenShots;
 		}
 	}
 

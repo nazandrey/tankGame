@@ -6,12 +6,12 @@ public class TankController : MonoBehaviour {
 	public float maneuverability;
 	public WeaponController[] weapons;
 
-	private WeaponController currentWeapon;
+	private WeaponController _currentWeapon;
 
 	// Use this for initialization
 	void Start () {
-		currentWeapon = weapons [0];
-		currentWeapon.Activate();
+		_currentWeapon = weapons [0];
+		_currentWeapon.Activate();
 	}
 
 	// Update is called once per frame
@@ -33,17 +33,17 @@ public class TankController : MonoBehaviour {
 		}
 
 		if (Input.GetKey (KeyCode.Q) || Input.GetKey (KeyCode.W)) {
-			currentWeapon.Deactivate();
+			_currentWeapon.Deactivate();
 			if (Input.GetKey (KeyCode.Q)) {
-				currentWeapon = weapons [0];
+				_currentWeapon = weapons [0];
 			} else if (Input.GetKey (KeyCode.W)) {
-				currentWeapon = weapons [1];
+				_currentWeapon = weapons [1];
 			}
-			currentWeapon.Activate();
+			_currentWeapon.Activate();
 		}
 
 		if (Input.GetKey (KeyCode.X)) {
-			currentWeapon.Shoot ();
+			_currentWeapon.Shoot ();
 		}
 	}
 }

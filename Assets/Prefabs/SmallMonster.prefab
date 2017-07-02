@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2356034}
   - component: {fileID: 5420298}
   - component: {fileID: 11407038}
-  - component: {fileID: 114171623126817804}
   - component: {fileID: 114975912807991404}
+  - component: {fileID: 114970607989864358}
   m_Layer: 0
   m_Name: SmallMonster
   m_TagString: Untagged
@@ -123,7 +123,7 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 177498}
   m_IsPrefabParent: 1
---- !u!114 &114171623126817804
+--- !u!114 &114970607989864358
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -131,11 +131,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 177498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c0dcc3ec8d33945a4481c9051a1c2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 196b75c48a6c58d499b50a65669f0b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  armor: 0
+  armor: 0.708
 --- !u!114 &114975912807991404
 MonoBehaviour:
   m_ObjectHideFlags: 1

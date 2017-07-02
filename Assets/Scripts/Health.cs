@@ -9,7 +9,7 @@ public class Health : MonoBehaviour {
 	public void Hurt(float damage){
 		health -= damage * (1f - armor);
 		if (health < 0) {
-			Destroy (gameObject);
+			_OnDeath ();
 		}
 	}
 
@@ -18,5 +18,9 @@ public class Health : MonoBehaviour {
 		{
 			return health < 0;
 		}
+	}
+
+	protected virtual void _OnDeath () {
+		Destroy (gameObject);
 	}
 }

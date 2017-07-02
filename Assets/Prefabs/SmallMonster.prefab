@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5420298}
   - component: {fileID: 11407038}
   - component: {fileID: 114171623126817804}
+  - component: {fileID: 114975912807991404}
   m_Layer: 0
   m_Name: SmallMonster
   m_TagString: Untagged
@@ -98,7 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33be8d84b2b4f264080e55c5e549ccf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 9.3
   attackDamage: 4
 --- !u!135 &13534452
 SphereCollider:
@@ -136,3 +136,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   armor: 0
+--- !u!114 &114975912807991404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7062ee9b5d10b824793296f4f1b47f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 4

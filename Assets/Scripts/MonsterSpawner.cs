@@ -14,7 +14,7 @@ public class MonsterSpawner : MonoBehaviour {
 		for (int i = 0; i < _MonsterCount; i++) {
 			Spawn ();
 		}
-		InvokeRepeating ("checkActiveSpawnPointList",0.5f,0.5f);
+		InvokeRepeating ("CheckActiveSpawnPointList",0.5f,0.5f);
 	}
 
 	public void CheckActiveSpawnPointList(){

@@ -4,13 +4,13 @@ using System.Collections;
 public class TankUserInput : MonoBehaviour {
 	public float speed;
 	public float maneuverability;
-	public WeaponController[] weapons;
+	public GunShooter[] gunArr;
 
-	private WeaponController _currentWeapon;
+	private GunShooter _currentGun;
 
 	void Start () {
-		_currentWeapon = weapons [0];
-		_currentWeapon.Activate();
+		_currentGun = gunArr [0];
+		_currentGun.Activate();
 	}
 
 	void Update () {
@@ -31,17 +31,17 @@ public class TankUserInput : MonoBehaviour {
 		}
 
 		if (Input.GetKey (KeyCode.Q) || Input.GetKey (KeyCode.W)) {
-			_currentWeapon.Deactivate();
+			_currentGun.Deactivate();
 			if (Input.GetKey (KeyCode.Q)) {
-				_currentWeapon = weapons [0];
+				_currentGun = gunArr [0];
 			} else if (Input.GetKey (KeyCode.W)) {
-				_currentWeapon = weapons [1];
+				_currentGun = gunArr [1];
 			}
-			_currentWeapon.Activate();
+			_currentGun.Activate();
 		}
 
 		if (Input.GetKey (KeyCode.X)) {
-			_currentWeapon.Shoot ();
+			_currentGun.Shoot ();
 		}
 	}
 }

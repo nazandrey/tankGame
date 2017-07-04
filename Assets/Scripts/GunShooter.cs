@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WeaponController : MonoBehaviour {
+public class GunShooter : MonoBehaviour {
 	public GameObject shotTemplate;
 
 	private float _delayBetweenShots;
@@ -9,7 +9,7 @@ public class WeaponController : MonoBehaviour {
 	private float _currentDelayBetweenShots = 0.0f;
 	private bool _canShoot = true;
 
-	public WeaponController(float delayBetweenShots, float shotStartDistance){
+	public GunShooter(float delayBetweenShots, float shotStartDistance){
 		_delayBetweenShots = delayBetweenShots;
 		_shotStartDistance = shotStartDistance;
 	}

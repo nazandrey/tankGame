@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TankController : MonoBehaviour {
+public class TankUserInput : MonoBehaviour {
 	public float speed;
 	public float maneuverability;
 	public WeaponController[] weapons;

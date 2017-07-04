@@ -719,7 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70c0dcc3ec8d33945a4481c9051a1c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 100
   armor: 0.5
 --- !u!136 &1080928860
 CapsuleCollider:

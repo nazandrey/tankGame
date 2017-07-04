@@ -14,7 +14,11 @@ public class Shot : MonoBehaviour {
 		Destroy (gameObject, defaultBulletDestroyingTime);
 	}
 
-	void OnTriggerEnter() {
+	void OnTriggerEnter(Collider other) {
+		Health health = other.GetComponent<Health> ();
+		if (health != null) {
+			health.Hurt (damageOnHit);
+		}
 		Destroy (gameObject);
 	}
 }

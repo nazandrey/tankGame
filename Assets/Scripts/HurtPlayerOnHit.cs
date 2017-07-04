@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MonsterController : MonoBehaviour {
+public class HurtPlayerOnHit : MonoBehaviour {
 	public float attackDamage = 4;
 
 	private Health _health;
@@ -11,18 +11,12 @@ public class MonsterController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.tag == "Shot") {
-			Shot shot = other.gameObject.GetComponent<Shot> ();
-			if (_health != null) {
-				_health.Hurt (shot.damageOnHit);
-			}
-		} else if (other.tag == "Player") {
+		if (other.tag == "Player") {
 			Health playerHealth = other.GetComponent<Health> ();
 			if (playerHealth != null) {
 				playerHealth.Hurt (attackDamage);
 			}
 			Destroy (gameObject);
-			//_monsterSpawner.Spawn ();
 		}
 	}
 }

@@ -2,6 +2,6 @@
 using System.Collections;
 
 public class MachineGunShooter : GunShooter {
-	public MachineGunShooter() : base(0.5f,2f) {
+	public MachineGunShooter() : base(0.2f,2f) {
 	}
 }

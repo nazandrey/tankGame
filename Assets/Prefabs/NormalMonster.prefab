@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 2356034}
   - component: {fileID: 5420298}
   - component: {fileID: 11407038}
-  - component: {fileID: 114935431954727260}
+  - component: {fileID: 114414456623432490}
+  - component: {fileID: 114039302763036578}
   m_Layer: 0
   m_Name: NormalMonster
   m_TagString: Untagged
@@ -122,7 +123,7 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 177498}
   m_IsPrefabParent: 1
---- !u!114 &114935431954727260
+--- !u!114 &114039302763036578
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -130,8 +131,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 177498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c0dcc3ec8d33945a4481c9051a1c2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 196b75c48a6c58d499b50a65669f0b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
+  health: 40
   armor: 0
+--- !u!114 &114414456623432490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7062ee9b5d10b824793296f4f1b47f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 4

@@ -8,6 +8,7 @@ public class SpawnPoint : MonoBehaviour {
 	public void Spawn(GameObject spawnObject){
 		Transform monsterPosition = gameObject.transform;
 		Instantiate (spawnObject, monsterPosition.position, monsterPosition.rotation);
+		//delay on monster spawns
 		isActive = false;
 		Invoke ("_Activate", spawnDelay);
 	}

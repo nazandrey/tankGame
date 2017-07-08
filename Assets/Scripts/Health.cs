@@ -20,6 +20,7 @@ public class Health : MonoBehaviour {
 		}
 	}
 
+	//for additional actions on death
 	protected virtual void _OnDeath () {
 		Destroy (gameObject);
 	}

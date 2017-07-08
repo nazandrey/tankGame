@@ -15,6 +15,7 @@ public class GunShooter : MonoBehaviour {
 	}
 
 	void Update () {
+		//check delay for shots
 		if (_currentDelayBetweenShots > 0) {
 			_canShoot = false;
 			_currentDelayBetweenShots -= Time.deltaTime;
@@ -31,6 +32,7 @@ public class GunShooter : MonoBehaviour {
 		}
 	}
 
+	//show that current gun is activated/deactivated
 	public void Activate () {
 		GetComponent<Renderer>().material.color = Color.red;
 	}

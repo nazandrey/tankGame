@@ -10,10 +10,12 @@ public class MonsterSpawner : MonoBehaviour {
 	private List<SpawnPoint> _activeSpawnPointList;
 
 	void Start () {
+		//fill active point list
 		CheckActiveSpawnPointList ();
 		for (int i = 0; i < _MonsterCount; i++) {
 			Spawn ();
 		}
+		//only active spawn point can spawn so we should check this constantly
 		InvokeRepeating ("CheckActiveSpawnPointList",0.5f,0.5f);
 	}
 
